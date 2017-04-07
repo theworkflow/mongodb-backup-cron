@@ -113,3 +113,6 @@ context aware.
 [MIT © Jeremiah Harlan.](LICENSE)  
 
 [rc]: https://www.npmjs.com/package/rc
+[version]: https://www.npmjs.com/package/s3-mongodump
+[build]: https://travis-ci.org/theworkflow/s3-mongodump
+[license]: https://raw.githubusercontent.com/theworkflow/s3-mongodump/master/LICENSE
