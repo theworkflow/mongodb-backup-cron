@@ -6,7 +6,9 @@
   "bugs": {
     "url": "https://github.com/theworkflow/mongodb-backup/issues"
   },
-  "bin": "./bin/mongodb-backup",
+  "bin": {
+    "mongodb-backup": "./bin/mongodb-backup"
+  },
   "dependencies": {
     "@xervo/logger": "2.0.0",
     "cron": "1.2.1",
