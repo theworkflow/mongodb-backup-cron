@@ -1,1 +1,1 @@
-module.exports = require('@xervo/logger')('mongodb-backup')
+module.exports = require('@xervo/logger')('mongodb-backup-cron')
