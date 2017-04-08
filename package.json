@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Jeremiah Harlan <jeremiah.harlan@gmail.com>",
   "bugs": {
-    "url": "https://github.com/theworkflow/mongodb-backup/issues"
+    "url": "https://github.com/theworkflow/mongodb-backup-cron/issues"
   },
   "bin": {
     "mongodb-backup": "./bin/mongodb-backup"
@@ -25,7 +25,7 @@
     "sinon": "2.1.0",
     "standard": "10.0.1"
   },
-  "homepage": "https://github.com/theworkflow/mongodb-backup",
+  "homepage": "https://github.com/theworkflow/mongodb-backup-cron",
   "keywords": [
     "CLI",
     "mongo",
@@ -39,7 +39,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/theworkflow/mongodb-backup.git"
+    "url": "https://github.com/theworkflow/mongodb-backup-cron.git"
   },
   "scripts": {
     "cov": "npm run unit -- --coverage --reporter=lcov",
