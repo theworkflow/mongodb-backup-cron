@@ -1,3 +1,5 @@
+const os = require('os')
+
 const { EventEmitter } = require('events')
 const { expect } = require('code')
 const lab = require('lab')
@@ -24,7 +26,7 @@ describe('src/s3', () => {
       accessKeyId: 'accessKeyId',
       secretAccessKey: 'secretAccessKey',
       bucket: 'bucket',
-      directory: process.cwd(),
+      directory: os.tmpdir(),
       retry: 3,
       date
     }
@@ -34,7 +36,7 @@ describe('src/s3', () => {
 
   it('builds s3 options', (done) => {
     const uploaderOptions = {
-      localFile: `${process.cwd()}/${date}.tar.gz`,
+      localFile: `${os.tmpdir()}/${date}.tar.gz`,
       s3Params: {
         Bucket: 'bucket',
         Key: `${date}.tar.gz`,
@@ -62,7 +64,7 @@ describe('src/s3', () => {
   it('uses options.retry if supplied', (done) => {
     options.retry = 10
     const uploaderOptions = {
-      localFile: `${process.cwd()}/${date}.tar.gz`,
+      localFile: `${os.tmpdir()}/${date}.tar.gz`,
       s3Params: {
         Bucket: 'bucket',
         Key: `${date}.tar.gz`,

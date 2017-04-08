@@ -1,3 +1,5 @@
+const os = require('os')
+
 const { expect } = require('code')
 const lab = require('lab')
 const proxyquire = require('proxyquire')
@@ -15,7 +17,7 @@ describe('src/backup', () => {
 
   before((done) => {
     date = new Date()
-    directory = __dirname
+    directory = os.tmpdir()
     uri = 'mongodb://localhost:27017'
     options = { date, directory, uri }
 
@@ -27,7 +29,7 @@ describe('src/backup', () => {
     backup(options)(() => {
       const call = backupStub.getCall(0).args[0]
       expect(call).to.include({
-        root: __dirname,
+        root: os.tmpdir(),
         uri: 'mongodb://localhost:27017',
         tar: `${date}.tar.gz`
       })

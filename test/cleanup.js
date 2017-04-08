@@ -1,3 +1,5 @@
+const os = require('os')
+
 const { expect } = require('code')
 const lab = require('lab')
 const proxyquire = require('proxyquire')
@@ -14,7 +16,7 @@ describe('src/cleanup', () => {
 
   beforeEach((done) => {
     date = new Date()
-    options = { directory: process.cwd(), date }
+    options = { directory: os.tmpdir(), date }
     unlinkStub.yields()
     done()
   })
