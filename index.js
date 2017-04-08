@@ -1,4 +1,5 @@
 const assert = require('assert')
+const os = require('os')
 const waterfall = require('run-waterfall')
 
 const backup = require('./src/backup')
@@ -23,9 +24,11 @@ const isInvalidOptions = (options) => {
 
 exports.backup = (options, done) => {
   options = Object.assign({
-    directory: __dirname,
     retry: 3
-  }, options, { date: new Date() })
+  }, options, {
+    date: new Date(),
+    directory: os.tmpdir()
+  })
 
   const invalid = isInvalidOptions(options)
   if (invalid) return done(invalid)
