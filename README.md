@@ -29,6 +29,8 @@ npm install mongodb-backup-cron --save
 
 ## Usage
 
+#### The mongo dump file is initially created in the operating system's temp directory using `OS.tmpdir()`
+
 ### CLI Usage
 
 ```
@@ -83,7 +85,6 @@ const options = {
   accessKeyId: 'key',
   secretAccessKey: 'secret',
   bucket: 'backup.mongo',
-  directory: __dirname,
   retry: 3,
   schedule: '0 0,12 * * *',
   start: true, // used to specify if cron should start once created
@@ -94,13 +95,14 @@ const options = {
 ### Configuration Files
 
 Create [an rc file][rc] to set defaults, so you don't have to pass an
-`accessKeyId` and `secretAccessKey` flag to every command.
+`uri`, `accessKeyId`, `secretAccessKey`, `retry`, and `bucket` flag to every command.
 
 ```
 # ~/.mongodb-backuprc
 uri = mongodb://localhost:27017/database
 accessKeyId = key
 secretAccessKey = secret
+retry = 3
 bucket = bucket
 ```
 
@@ -113,6 +115,6 @@ context aware.
 [MIT © Jeremiah Harlan.](LICENSE)  
 
 [rc]: https://www.npmjs.com/package/rc
-[version]: https://www.npmjs.com/package/s3-mongodump
-[build]: https://travis-ci.org/theworkflow/s3-mongodump
-[license]: https://raw.githubusercontent.com/theworkflow/s3-mongodump/master/LICENSE
+[version]: https://www.npmjs.com/package/mongodb-backup-cron
+[build]: https://travis-ci.org/theworkflow/mongodb-backup-cron
+[license]: https://raw.githubusercontent.com/theworkflow/mongodb-backup-cron/master/LICENSE
