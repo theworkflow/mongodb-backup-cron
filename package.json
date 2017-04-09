@@ -1,7 +1,7 @@
 {
   "name": "mongodb-backup-cron",
   "description": "Backup mongo database on a cron schedule and send to AWS S3",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Jeremiah Harlan <jeremiah.harlan@gmail.com>",
   "bugs": {
     "url": "https://github.com/theworkflow/mongodb-backup-cron/issues"
